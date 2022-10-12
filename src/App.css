@@ -1,38 +1,100 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
+.cell {
+    background-color: #838383;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 20px;
+}
+
+.pacman {
+    background-color: yellow;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pacman.NORTH {
+    transform: rotate(90deg);
+}
+.pacman.SOUTH {
+    transform: rotate(270deg);
+}
+.pacman.EAST {
+    transform: rotate(180deg);
+}
+.pacman.WEST {
     transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.pacman .mouth {
+    position: absolute;
+    top: -69%;
+    left: -63%;
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 60px solid black;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.actions div {
+    margin: 5px;
+    background-color: #1c1d1f;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+input {
+    background-color: transparent;
+    color: #fefefe;
+    border: 2px solid blueviolet;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 1.2rem;
 }
